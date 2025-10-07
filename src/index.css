@@ -3,7 +3,7 @@
 @theme {
   --color-border: hsl(var(--border));
   --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foregound));
+  --color-foreground: hsl(var(--foreground));
   
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
@@ -60,6 +60,16 @@
       opacity: 0;
     }
   }
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateY(-25%);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
 }
 
 @layer base {
@@ -102,7 +112,7 @@
 }
 
 @utility container {
-  marign-inline: auto;
+  margin-inline: auto;
   padding-inline: 2rem;
 
   @media (width >= 640px) {
