@@ -25,20 +25,32 @@ export const Navbar = () => {
     }, []);
 
     useEffect(() => {
+        let scrollY = 0;
+
         if (isMenuOpen) {
-            // Save current scroll position
-            const scrollY = window.scrollY;
+            // Save the scroll position
+            scrollY = window.scrollY;
             document.body.style.position = 'fixed';
             document.body.style.top = `-${scrollY}px`;
             document.body.style.width = '100%';
+            document.body.style.overflowY = 'scroll'; // Prevent layout shift
         } else {
-            // Restore scroll position
-            const scrollY = document.body.style.top;
+            // Restore the scroll position
+            const y = document.body.style.top;
             document.body.style.position = '';
             document.body.style.top = '';
             document.body.style.width = '';
-            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+            document.body.style.overflowY = '';
+            window.scrollTo(0, parseInt(y || '0') * -1);
         }
+
+        // Clean up in case component unmounts mid-animation
+        return () => {
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            document.body.style.overflowY = '';
+        };
     }, [isMenuOpen]);
 
     return <nav className={
@@ -83,7 +95,14 @@ export const Navbar = () => {
                         key={key} 
                         href={item.href} 
                         className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                        onClick={() => setIsMenuOpen(false)}>
+                        onClick={(e) => {
+                            e.preventDefault();
+                            const target = document.querySelector(item.href);
+                            setIsMenuOpen(false);
+                            setTimeout(() => {
+                                if (target) target.scrollIntoView({ behavior: "smooth" });
+                            }, 300); // wait for menu close animation
+                        }}>
                             {item.name}
                         </a>
                     ))}
