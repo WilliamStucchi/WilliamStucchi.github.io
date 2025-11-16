@@ -80,116 +80,94 @@ export const ProjectsSection = () => {
     }, []);
 
     return (
-        <section id="projects" className="py-24 px-4 relative">
-            <div className="container mx-auto max-w-5xl">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-                    Featured <span className="text-primary">Projects</span>
-                </h2>
-
-                <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                </p>
-
-                <div className="w-full py-2 bg-background">
-                    <div className="relative">
-                        <div 
-                        ref={scrollRef}
-                        onScroll={handleScroll}
-                        className="flex overflow-x-auto gap-8 px-[calc(50vw-200px)] py-8 snap-x snap-mandatory scrollbar-hide"
-                        style={{
-                            scrollbarWidth: 'none',
-                            msOverflowStyle: 'none',
-                            WebkitOverflowScrolling: 'touch'
-                        }}
+        <div className="w-full py-12 bg-background">
+        <div className="relative">
+            <div 
+            ref={scrollRef}
+            onScroll={handleScroll}
+            className="flex overflow-x-auto gap-8 px-[calc(50vw-200px)] py-8 snap-x snap-mandatory scrollbar-hide"
+            style={{
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+                WebkitOverflowScrolling: 'touch'
+            }}
+            >
+            {projects.map((project, index) => (
+                <div
+                key={project.id}
+                onClick={() => scrollToProject(index)}
+                className={`carousel-item flex-shrink-0 snap-center transition-all duration-500 cursor-pointer ${
+                    focusedIndex === index 
+                    ? 'w-[280px] sm:w-[340px] md:w-[400px]' 
+                    : 'w-[240px] sm:w-[280px] md:w-[320px] opacity-60 scale-95'
+                }`}
+                >
+                <div className="bg-card rounded-lg overflow-hidden shadow-lg h-full">
+                    <div className="h-48 overflow-hidden">
+                    <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    />
+                    </div>
+                    <div className="p-6">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                        {project.tags.map((tag, tagIndex) => (
+                        <span 
+                            key={tagIndex}
+                            className="px-2 py-1 text-xs font-medium border rounded-full bg-primary/25 text-secondary-foreground"
                         >
-                        {projects.map((project, index) => (
-                            <div
-                            key={project.id}
-                            onClick={() => scrollToProject(index)}
-                            className={`carousel-item flex-shrink-0 snap-center transition-all duration-500 cursor-pointer ${
-                                focusedIndex === index 
-                                ? 'w-[400px]' 
-                                : 'w-[320px] opacity-60 scale-95'
-                            }`}
-                            >
-                            <div className="bg-card rounded-lg overflow-hidden shadow-lg h-full">
-                                <div className="h-48 overflow-hidden">
-                                <img 
-                                    src={project.image} 
-                                    alt={project.title} 
-                                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                                />
-                                </div>
-                                <div className="p-6">
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {project.tags.map((tag, tagIndex) => (
-                                    <span 
-                                        key={tagIndex}
-                                        className="px-2 py-1 text-xs font-medium border rounded-full bg-primary/25 text-secondary-foreground"
-                                    >
-                                        {tag}
-                                    </span>
-                                    ))}
-                                </div>
-                                <h3 className="text-xl font-semibold mb-1">
-                                    {project.title}
-                                </h3>
-                                <p className="text-sm text-muted-foreground mb-4">
-                                    {project.description}
-                                </p>
-                                <div className="flex justify-between items-center">
-                                    <div className="flex space-x-3">
-                                    <a 
-                                        href={project.githubUrl}
-                                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onClick={(e) => e.stopPropagation()}
-                                    >
-                                        <Github size={20} />
-                                    </a>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
+                            {tag}
+                        </span>
                         ))}
-                        </div>
-                        
-                        {/* Navigation dots */}
-                        <div className="flex justify-center gap-2 mt-6">
-                        {projects.map((_, index) => (
-                            <button
-                            key={index}
-                            onClick={() => scrollToProject(index)}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                                focusedIndex === index 
-                                ? 'bg-primary w-8' 
-                                : 'bg-foreground/20 hover:bg-foreground/40'
-                            }`}
-                            aria-label={`Go to project ${index + 1}`}
-                            />
-                        ))}
+                    </div>
+                    <h3 className="text-xl font-semibold mb-1">
+                        {project.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                        {project.description}
+                    </p>
+                    <div className="flex justify-between items-center">
+                        <div className="flex space-x-3">
+                        <a 
+                            href={project.githubUrl}
+                            className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <Github size={20} />
+                        </a>
                         </div>
                     </div>
-                    
-                    <style dangerouslySetInnerHTML={{__html: `
-                        .scrollbar-hide::-webkit-scrollbar {
-                        display: none;
-                        }
-                    `}} />
+                    </div>
                 </div>
-
-                <div className="text-center mt-12">
-                    <a 
-                    href="https://github.com/WilliamStucchi"
-                    target="_blank"
-                    className="cosmic-button w-fit flex items-center mx-auto gap-2">
-                        Check My Github <ArrowRight size={16} />
-                    </a>
                 </div>
+            ))}
             </div>
-        </section>
+            
+            {/* Navigation dots */}
+            <div className="flex justify-center gap-2 mt-6">
+            {projects.map((_, index) => (
+                <button
+                key={index}
+                onClick={() => scrollToProject(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    focusedIndex === index 
+                    ? 'bg-primary w-8' 
+                    : 'bg-foreground/20 hover:bg-foreground/40'
+                }`}
+                aria-label={`Go to project ${index + 1}`}
+                />
+            ))}
+            </div>
+        </div>
+        
+        <style jsx>{`
+            .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+            }
+        `}</style>
+        </div>
     );
 }
