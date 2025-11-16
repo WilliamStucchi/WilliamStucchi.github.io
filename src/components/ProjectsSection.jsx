@@ -174,12 +174,12 @@ export const ProjectsSection = () => {
                         </div>
                     </div>
                     
-                    <style jsx>{`
+                    <style dangerouslySetInnerHTML={{__html: `
                         .scrollbar-hide::-webkit-scrollbar {
                         display: none;
                         }
-                    `}</style>
-                    </div>
+                    `}} />
+                </div>
 
                 <div className="text-center mt-12">
                     <a 
