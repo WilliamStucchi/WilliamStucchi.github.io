@@ -16,7 +16,7 @@ export const ContactSection = () => {
 
         try {
             const formspreeId = import.meta.env.VITE_FORMSPREE_ID || process.env.REACT_APP_FORMSPREE_ID;
-            
+
             if (!formspreeId) {
                 setStatus("Formspree ID not configured. Check your .env.local file.");
                 setLoading(false);
@@ -72,18 +72,18 @@ export const ContactSection = () => {
                         <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 justify-center">
                             <div className="flex items-start space-x-4">
                                 <div>
-                                    <a href={"mail"+"to:"+"stucchiw53"+"@"+"gmail"+"."+"com"} aria-label="Email"
-                                    className="text-muted-foreground hover:text-primary transition-colors">
-                                        <Mail className="h-10 w-10 text-primary"/>{" "}
+                                    <a href={"mail" + "to:" + "stucchiw53" + "@" + "gmail" + "." + "com"} aria-label="Email"
+                                        className="text-muted-foreground hover:text-primary transition-colors">
+                                        <Mail className="h-10 w-10 text-primary" />{" "}
                                     </a>
                                 </div>
                             </div>
                             <div className="flex items-start space-x-4">
                                 <div>
                                     <a href="https://www.linkedin.com/in/williamstucchi" target="_blank"
-                                    aria-label=""
-                                    className="text-muLinkedInted-foreground hover:text-primary transition-colors">
-                                        <Linkedin className="h-10 w-10 text-primary"/>{" "}
+                                        aria-label=""
+                                        className="text-muLinkedInted-foreground hover:text-primary transition-colors">
+                                        <Linkedin className="h-10 w-10 text-primary" />{" "}
                                     </a>
                                 </div>
                             </div>
@@ -94,8 +94,8 @@ export const ContactSection = () => {
                         <h3 className="text-2xl font-semibold mb-6">
                             Send a Message
                         </h3>
-                        <form 
-                            className="space-y-6" 
+                        <form
+                            className="space-y-6"
                             onSubmit={handleSubmit}>
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -139,12 +139,12 @@ export const ContactSection = () => {
                                 />
                             </div>
 
-                            <button 
-                                type="submit" 
+                            <button
+                                type="submit"
                                 disabled={loading}
                                 className={cn(
-                                "cosmic-button w-full flex items-center justify-center gap-2")
-                            }>
+                                    "cosmic-button w-full flex items-center justify-center gap-2")
+                                }>
                                 {loading ? "Sending..." : "Send Message"}
                                 <Send size={16} />
                             </button>
