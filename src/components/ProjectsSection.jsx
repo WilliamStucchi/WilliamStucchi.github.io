@@ -1,32 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { ArrowRight, Github } from "lucide-react";
 
-const projects = [
-    {
-        id: 1,
-        title: "Project1",
-        description: "Description of Project1",
-        image: "/projects/project1.png",
-        tags: ["tag1", "tag2", "tag3"],
-        githubUrl: "#"
-    },
-    {
-        id: 2,
-        title: "Project2",
-        description: "Description of Project2",
-        image: "/projects/project2.png",
-        tags: ["tag1", "tag2", "tag3"],
-        githubUrl: "#"
-    },
-    {
-        id: 3,
-        title: "Project3",
-        description: "Description of Project3",
-        image: "/projects/project3.png",
-        tags: ["tag1", "tag2", "tag3"],
-        githubUrl: "#"
-    },
-];
+import { projects } from "@/data/constants";
 
 export const ProjectsSection = () => {
     const scrollRef = useRef(null);

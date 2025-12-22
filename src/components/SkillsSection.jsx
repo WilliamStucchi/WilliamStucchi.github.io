@@ -1,35 +1,7 @@
 import { cn } from "@/lib/utils";
 import React, { useRef, useState, useEffect } from "react";
 
-/* List of skills I have */
-const skills = [
-    // AI
-    { name: "SKILL1", level: 5, category: "ai" },
-    { name: "SKILL2", level: 4, category: "ai" },
-
-    // Vision
-    { name: "SKILL3", level: 2, category: "vision" },
-
-    // Tools
-    { name: "SKILL4", level: 5, category: "tools" },
-    { name: "SKILL5", level: 3, category: "tools" },
-
-    // Others
-
-    { name: "SKILL6", level: 5, category: "others" },
-    { name: "SKILL7", level: 2, category: "others" }
-];
-
-
-const proficiencyLevels = [
-    "Beginner",
-    "Intermediate",
-    "Advanced",
-    "Expert",
-    "Master"
-]
-
-const categories = ["all", "ai", "vision", "tools", "others"];
+import { skills, proficiencyLevels, categories } from "@/data/constants";
 
 export const SkillsSection = () => {
     const scrollRef = useRef(null);
