@@ -55,7 +55,7 @@ export const ProjectsSection = () => {
     }, []);
 
     return (
-        <section id="projects" className="w-full py-12 bg-background">
+        <section id="projects" className="w-full py-12 bg-background scroll-mt-15">
             <div className="relative">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                     My <span className="text-primary">Projects</span>
