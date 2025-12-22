@@ -3,8 +3,6 @@ import { cn } from "@/lib/utils";
 import { Linkedin, Mail, Send } from "lucide-react";
 import { useState } from "react";
 
-import { useForm, ValidationError } from "@formspree/react";
-
 export const ContactSection = () => {
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState("");
