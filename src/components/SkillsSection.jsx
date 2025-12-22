@@ -185,12 +185,7 @@ export const SkillsSection = () => {
                 </div>
             </div>
 
-            <style dangerouslySetInnerHTML={{
-                __html: `
-            .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-            }
-        `}} />
+
         </section>
     );
 }
