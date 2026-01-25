@@ -2,27 +2,35 @@
 export const projects = [
     {
         id: 1,
-        title: "Project1",
-        description: "Description of Project1",
-        image: "/projects/project1.png",
-        tags: ["tag1", "tag2", "tag3"],
-        githubUrl: "#"
+        title: "Robotics Project 1",
+        description: "Mecanum Odometry and Kinematic Control",
+        image: "/projects/robotics-project-1.png",
+        tags: ["C++", "ROS", "Kinematics", "Control Theory"],
+        githubUrl: "#https://github.com/WilliamStucchi/robotics_project_1"
     },
     {
         id: 2,
-        title: "Project2",
-        description: "Description of Project2",
-        image: "/projects/project2.png",
-        tags: ["tag1", "tag2", "tag3"],
-        githubUrl: "#"
+        title: "IACV Project",
+        description: "Image Analysis and Computer Vision",
+        image: "/projects/iacv-project.png",
+        tags: ["Python", "OpenCV", "Image Processing", "Computer Vision"],
+        githubUrl: "#https://github.com/WilliamStucchi/IACV-project"
     },
     {
         id: 3,
-        title: "Project3",
-        description: "Description of Project3",
-        image: "/projects/project3.png",
-        tags: ["tag1", "tag2", "tag3"],
-        githubUrl: "#"
+        title: "Eryantis",
+        description: "Online Board Game",
+        image: "/projects/eryantis.png",
+        tags: ["Java", "JavaFX", "MVC", "Networking", "Multiplayer"],
+        githubUrl: "#https://github.com/WilliamStucchi/ing-sw-2022-veronese-silvestrini-stucchi"
+    },
+    {
+        id: 4,
+        title: "Artificial Neural Networks and Deep Learning",
+        description: "Neural Networks Challenge",
+        image: "/projects/anndl-project.png",
+        tags: ["Python", "TensorFlow", "Keras", "NumPy", "Matplotlib"],
+        githubUrl: "#https://github.com/WilliamStucchi/Artificial-Neural-Networks-and-Deep-Learning"
     },
 ];
 
