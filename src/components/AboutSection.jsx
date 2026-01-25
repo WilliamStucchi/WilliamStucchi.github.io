@@ -14,15 +14,19 @@ export const AboutSection = () => {
                         <h3 className="text-2xl font-semibold">Passionate AI Developer & Engineer</h3>
 
                         <p className="text-muted-foreground">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            I am a <strong>CS & AI Engineer</strong> specializing in deploying intelligent systems for autonomous vehicles.
+                            My expertise lies in architecting <strong>end-to-end solutions</strong> that integrate detection, vehicle dynamics, and real-time sensor fusion,
+                            with a proven track record of migrating complex models <strong>from ideas to production</strong>.
+                            From modeling racing car dynamics to developing safety-critical software for agricultural vehicles,
+                            I bridge the gap between high-level research and <strong>edge-computing reality</strong>.
                         </p>
 
                         <p className="text-muted-foreground">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            I am driven by a passion for <strong>exploring emerging technologies</strong> and <strong>collaborating within cross-functional teams</strong>
+                            to solve complex problems.
+                            My goal is to transform cutting-edge AI research into meaningful, high-value products that <strong>improve safety and efficiency</strong> for society.
+                            I believe the best innovation happens at the intersection of <strong>teamwork</strong> and <strong>technical curiosity</strong>,
+                            creating tools that truly make life easier for the end user.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -49,7 +53,8 @@ export const AboutSection = () => {
                                 <div className="text-left">
                                     <h4 className="font-semibold text-lg"> AI Development</h4>
                                     <p className="text-muted-foeground">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        I deploy real-time CNNs on embedded Linux and high-precision segmentation on NVIDIA platforms,
+                                        optimizing complex models for autonomous edge-computing.
                                     </p>
                                 </div>
                             </div>
@@ -62,7 +67,9 @@ export const AboutSection = () => {
                                 <div className="text-left">
                                     <h4 className="font-semibold text-lg"> Team Work</h4>
                                     <p className="text-muted-foeground">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        I drive innovation through cross-functional collaboration,
+                                        coordinating with teams across Italy, Germany and France to deliver complex,
+                                        multi-company engineering projects.
                                     </p>
                                 </div>
                             </div>
@@ -75,7 +82,8 @@ export const AboutSection = () => {
                                 <div className="text-left">
                                     <h4 className="font-semibold text-lg"> Project Management</h4>
                                     <p className="text-muted-foeground">
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        I own the lifecycle of full-stack HMI systems, transitioning from supervised
+                                        software development to managing multiple software solutions implementations.
                                     </p>
                                 </div>
                             </div>

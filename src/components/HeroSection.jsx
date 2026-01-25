@@ -14,9 +14,9 @@ export const HeroSection = () => {
                         <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2"> Stucchi</span>
                     </h1>
                     <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-4">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        I design and build intelligent systems using AI, robotics, and computer vision.
+                        My work spans research and product development, with a strong interest in automotive technologies and other real-world, high-impact applications.
+                        If you'd like to know more about me and my work, scroll down!
                     </p>
 
                     <div className="pt-4 opacity-0 animate-fade-in-delay-4">
