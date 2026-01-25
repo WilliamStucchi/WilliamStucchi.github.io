@@ -28,21 +28,38 @@ export const projects = [
 
 /* SkillsSection */
 export const skills = [
-    // AI
-    { name: "SKILL1", level: 5, category: "ai" },
-    { name: "SKILL2", level: 4, category: "ai" },
+    // Software Development
+    { name: "C/C++", level: 5, category: "SW Dev" },
+    { name: "Python", level: 5, category: "SW Dev" },
+    { name: "ROS2 / Middleware", level: 4, category: "SW Dev" },
+    { name: "Bash Scripting", level: 4, category: "SW Dev" },
 
-    // Vision
-    { name: "SKILL3", level: 2, category: "vision" },
+    // AI & Machine Learning
+    { name: "TensorFlow", level: 4, category: "AI" },
+    { name: "Object Detection", level: 5, category: "AI" },
+    { name: "Semantic Segmentation", level: 4, category: "AI" },
+    { name: "Model Optimization (TensorRT)", level: 3, category: "AI" },
+    { name: "Sensor Fusion", level: 4, category: "AI" },
 
-    // Tools
-    { name: "SKILL4", level: 5, category: "tools" },
-    { name: "SKILL5", level: 3, category: "tools" },
+    // Computer Vision & Perception
+    { name: "OpenCV", level: 4, category: "Vision" },
+    { name: "Image Processing", level: 4, category: "Vision" },
+    { name: "OpenGL", level: 3, category: "Vision" },
+    { name: "GStreamer", level: 4, category: "Vision" },
+    { name: "Camera Calibration", level: 4, category: "Vision" },
 
-    // Others
+    // Professional Tools
+    { name: "Git / Version Control", level: 5, category: "Tools" },
+    { name: "Linux / Embedded Systems", level: 5, category: "Tools" },
+    { name: "NVIDIA Jetson / Edge AI", level: 5, category: "Tools" },
+    { name: "Docker & Containerization", level: 4, category: "Tools" },
+    { name: "CI/CD Pipelines", level: 3, category: "Tools" },
 
-    { name: "SKILL6", level: 5, category: "others" },
-    { name: "SKILL7", level: 2, category: "others" }
+    // Specialized Domains
+    { name: "CAN bus / J1939", level: 4, category: "Others" },
+    { name: "HiL Simulation", level: 4, category: "Others" },
+    { name: "Full-Stack HMI", level: 4, category: "Others" },
+    { name: "Vehicle Dynamics Modeling", level: 4, category: "Others" }
 ];
 
 
@@ -54,4 +71,4 @@ export const proficiencyLevels = [
     "Master"
 ]
 
-export const categories = ["all", "ai", "vision", "tools", "others"];
+export const categories = ["All", "SW Dev", "AI", "Vision", "Tools", "Others"];

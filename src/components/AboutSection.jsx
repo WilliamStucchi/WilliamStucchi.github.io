@@ -82,7 +82,7 @@ export const AboutSection = () => {
                                 <div className="text-left">
                                     <h4 className="font-semibold text-lg"> Project Management</h4>
                                     <p className="text-muted-foeground">
-                                        I own the lifecycle of full-stack HMI systems, transitioning from supervised
+                                        I lead the lifecycle of full-stack intelligent HMI system, transitioning from supervised
                                         software development to managing multiple software solutions implementations.
                                     </p>
                                 </div>
