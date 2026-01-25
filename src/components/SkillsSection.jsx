@@ -6,7 +6,7 @@ import { skills, proficiencyLevels, categories } from "@/data/constants";
 export const SkillsSection = () => {
     const scrollRef = useRef(null);
     const [focusedIndex, setFocusedIndex] = useState(0);
-    const [activeCategory, setActiveCategory] = useState("all");
+    const [activeCategory, setActiveCategory] = useState("All");
 
     const filteredSkills = skills.filter(
         (skill) => activeCategory === "All" || skill.category === activeCategory
