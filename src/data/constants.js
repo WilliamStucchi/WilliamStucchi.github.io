@@ -32,6 +32,22 @@ export const projects = [
         tags: ["Python", "TensorFlow", "Keras", "NumPy", "Matplotlib"],
         githubUrl: "#https://github.com/WilliamStucchi/Artificial-Neural-Networks-and-Deep-Learning"
     },
+    {
+        id: 5,
+        title: "Advanced Vehicle State Estimation",
+        description: "Neural Networks Vehicle State Estimation",
+        image: "/projects/msc-thesis.png",
+        tags: ["Python", "TensorFlow", "Keras", "NumPy", "Matplotlib"],
+        githubUrl: "#https://github.com/WilliamStucchi/MSc_ASCARI"
+    },
+    {
+        id: 6,
+        title: "Sensors Fusion & STM32",
+        description: "Exploit Sensor Fusion and Embedded PCs",
+        image: "/projects/sensors-systems.png",
+        tags: ["C", "STM32", "I2C", "SPI", "UART", "DMA", "LCD", "IR"],
+        githubUrl: "#https://github.com/WilliamStucchi/Sensor-Systems"
+    },
 ];
 
 /* SkillsSection */
