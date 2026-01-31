@@ -6,24 +6,24 @@ import { useState } from "react";
 export const ContactSection = () => {
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState("");
+    const [statusType, setStatusType] = useState("idle");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const form = e.target;
+        const formData = new FormData(form);
+
         setLoading(true);
-        setStatus("");
+        setStatus("Sending...");
+        setStatusType("idle");
 
         try {
-            const formspreeId = import.meta.env.VITE_FORMSPREE_ID || process.env.REACT_APP_FORMSPREE_ID;
+            const formspreeId = import.meta.env.VITE_FORMSPREE_ID;
 
             if (!formspreeId) {
-                setStatus("Formspree ID not configured. Check your .env.local file.");
-                setLoading(false);
-                return;
+                throw new Error("Formspree ID not configured.");
             }
-
-            console.log("Formspree ID:", formspreeId); // Debug log
-
-            const formData = new FormData(e.target);
 
             const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
                 method: "POST",
@@ -31,19 +31,28 @@ export const ContactSection = () => {
                 headers: { 'Accept': 'application/json' }
             });
 
-            console.log("Response status:", res.status); // Debug log
-            const data = await res.json();
-            console.log("Response data:", data); // Debug log
+            if (!res.ok) {
+                const data = await res.json();
 
-            if (res.ok) {
-                setStatus("Message sent!");
-                e.target.reset();
-            } else {
-                setStatus(data.error || "Something went wrong.");
+                if (data.errors && Array.isArray(data.errors) && data.errors.length > 0) {
+                    // Formspree returns an array of errors, e.g. [{field: "email", message: "should be an email"}]
+                    const paramErrors = data.errors.map(err =>
+                        `${err.field ? err.field + ' ' : ''}${err.message}`
+                    ).join(", ");
+                    throw new Error(paramErrors);
+                }
+
+                throw new Error(data.error || "Failed to send message");
             }
+
+            setStatus("Message sent!");
+            setStatusType("success");
+            form.reset();
+
         } catch (error) {
-            console.error("Full error:", error);
-            setStatus(`Failed to send message: ${error.message}`);
+            console.error(error);
+            setStatus(error.message || "Failed to send message.");
+            setStatusType("error");
         } finally {
             setLoading(false);
         }
@@ -149,7 +158,15 @@ export const ContactSection = () => {
                         </form>
 
                         {status && (
-                            <p className="text-center mt-4 text-primary font-medium">{status}</p>
+                            <p
+                                className={cn(
+                                    "text-center mt-4 font-medium",
+                                    statusType === "success" && "text-green-500",
+                                    statusType === "error" && "text-red-500"
+                                )}
+                            >
+                                {status}
+                            </p>
                         )}
                     </div>
                 </div>
